@@ -159,6 +159,7 @@ set wildmode=longest,list,full
 set wildmenu
 set number
 ab ip import ipdb; ipdb.set_trace()
+ab ipp import pdb; pdb.set_trace()
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -176,7 +177,8 @@ set hlsearch
 
 nnoremap <C-L> :nohl<CR><C-L>
 inoremap jk <Esc>
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
+set clipboard=unnamed
 set encoding=utf-8
 vnoremap . :norm.<CR>
 let g:indent_guides_auto_colors = 0
@@ -244,3 +246,7 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+let g:ctrlp_custom_ignore = 'Library\|Desktop'
