@@ -177,6 +177,7 @@ set hlsearch
 nnoremap <C-L> :nohl<CR><C-L>
 inoremap jk <Esc>
 set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set encoding=utf-8
 vnoremap . :norm.<CR>
 let g:indent_guides_auto_colors = 0
